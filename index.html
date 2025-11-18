@@ -159,25 +159,21 @@
             </div>
             <div class="email">
                 <section id="contato" class="contato-section">
-                     <form id="contactForm" class="form-contato">
-                        <label for="nome">Nome:</label>
-                        <input id="nome" type="text" name="Nome" required>
-
-                        <label for="email">Email:</label>
-                        <input id="email" type="email" name="Email" required>
-
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="Mensagem" required></textarea>
-
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="62ebe931-5da1-4ab8-a0ee-6fb0d2f5a4e8">
+                        <label for="">Nome:</label>
+                        <input type="text" name="name" required>
+                        <label for="">Email:</label>
+                        <input type="email" name="email" required>
+                        <label for="">Mensagem:</label>
+                        <textarea name="message" required></textarea>
                         <button type="submit">Enviar</button>
                     </form>
-                    <p id="status" style="margin-top:10px; color:white;"></p>
                 </section>
             </div>
         </div>
     </div>
     <div>
-        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
         <script src="script.js"></script>
     </div>
 </body>
