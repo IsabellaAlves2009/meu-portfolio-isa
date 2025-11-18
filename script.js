@@ -17,29 +17,32 @@ document.querySelectorAll(".secao").forEach((secao) => {
   observer.observe(secao);
 });
 
-(function() {
-    emailjs.init("SEU_PUBLIC_KEY_AQUI");
-})();
+function showMessage(text, type) {
+    statusMsg.textContent = text;
+    statusMsg.className = ""; // limpa
+    statusMsg.classList.add(type);
+    
+    // aparece
+    statusMsg.style.opacity = "1";
 
-const form = document.getElementById("contactForm");
-const statusMsg = document.getElementById("status");
+    // some depois de 4s
+    setTimeout(() => {
+        statusMsg.style.opacity = "0";
+    }, 4000);
+}
 
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    statusMsg.textContent = "Enviando...";
-    emailjs.send("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", {
-        Nome: document.getElementById("nome").value,
-        Email: document.getElementById("email").value,
-        Mensagem: document.getElementById("mensagem").value
-    })
-    .then(() => {
-        statusMsg.textContent = "Mensagem enviada com sucesso!";
-        statusMsg.style.color = "lightgreen";
-        form.reset();
-    })
-    .catch(() => {
-        statusMsg.textContent = "Erro ao enviar a mensagem.";
-        statusMsg.style.color = "red";
-    });
+emailjs
+.send("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", {
+    Nome: document.getElementById("nome").value,
+    Email: document.getElementById("email").value,
+    Mensagem: document.getElementById("mensagem").value
+})
+.then(() => {
+    showMessage("Mensagem enviada com sucesso!", "success");
+    form.reset();
+})
+.catch(() => {
+    showMessage("Ocorreu um erro ao enviar. Tente novamente.", "error");
 });
+
 

@@ -324,6 +324,7 @@ header ul li a:hover, header ul li a:active, header ul li a:focus{
 
 .email form input:active,
 .email form input:focus, 
+.email form input::after,
 .email form textarea:active,
 .email form textarea:focus{
     outline: 1px solid #19b4f7;
@@ -388,6 +389,30 @@ header ul li a:hover, header ul li a:active, header ul li a:focus{
   opacity: 1;
   transform: translateY(0);
 }
+
+#status {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    width: fit-content;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#status.success {
+    background-color: #d4f8e8;
+    color: #2d8a5c;
+    border: 1px solid #2d8a5c;
+}
+
+#status.error {
+    background-color: #ffe0e0;
+    color: #c0392b;
+    border: 1px solid #c0392b;
+}
+
 
 @keyframes fadeUp {
   from {
