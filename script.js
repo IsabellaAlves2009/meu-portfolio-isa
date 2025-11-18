@@ -24,7 +24,7 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const formData = new FormData(form);
-  formData.append("access_key", "62ebe931-5da1-4ab8-a0ee-6fb0d2f5a4e8");
+  formData.append("access_key", "c8d1039d-9670-4796-9828-45acce481677");
 
   const originalText = submitBtn.textContent;
 
