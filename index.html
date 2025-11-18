@@ -159,23 +159,25 @@
             </div>
             <div class="email">
                 <section id="contato" class="contato-section">
-                     <form action="mailto:bella.s.alves2005@gmail.com" method="POST" enctype="text/plain" class="form-contato">
+                     <form id="contactForm" class="form-contato">
                         <label for="nome">Nome:</label>
                         <input id="nome" type="text" name="Nome" required>
-    
+
                         <label for="email">Email:</label>
-                        <input id="email" type="email" name="Email" maxlength="500" required>
-    
+                        <input id="email" type="email" name="Email" required>
+
                         <label for="mensagem">Mensagem:</label>
                         <textarea id="mensagem" name="Mensagem" required></textarea>
-    
+
                         <button type="submit">Enviar</button>
                     </form>
+                    <p id="status" style="margin-top:10px; color:white;"></p>
                 </section>
             </div>
         </div>
     </div>
     <div>
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
         <script src="script.js"></script>
     </div>
 </body>
